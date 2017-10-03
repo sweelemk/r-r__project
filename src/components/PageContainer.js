@@ -10,7 +10,9 @@ export default class PageContainer extends Component {
         children: propTypes.element,
         selectedPage: propTypes.string
     }
-
+    componentDidMount() {
+        
+    }
     getLinks = () => {
 
         return routeConst.map((link, index) => {
@@ -34,6 +36,7 @@ export default class PageContainer extends Component {
                     </div>
                 </div>
                 <div className="content-container">
+                    {console.log(this.props.children)}
                     {this.props.children}
                 </div>
             </div>

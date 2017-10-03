@@ -19,9 +19,10 @@ export default class Main extends Component {
             return route.page === defaultPage;
         });
 
+        
         const DefaultComponent = DefaultItem.component;
         const defaultPageName = DefaultItem.page;
-
+        
         routes.push(
             <Route
                 exact
@@ -33,11 +34,13 @@ export default class Main extends Component {
                     </PageContainer>}
             />,
         );
+        
 
         routeConst.forEach((route, index) => {
-            const moduleUrlHash = route.defaultUrlHash;
+            const moduleUrlHash = route.defaultHash;
 
             const Constructor = route.component;
+            
             routes.push(
                 <Route
                     key={index + 1}
